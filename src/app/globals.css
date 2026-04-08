@@ -8,6 +8,13 @@
   --color-text-primary: #ffffff;
   --color-text-secondary: #a0a0a0;
   --color-text-tertiary: #666666;
+  --color-sparkles-color: var(--sparkles-color);
+  --color-gradient-color: var(--gradient-color);
+}
+
+:root {
+  --gradient-color: #8350e8;
+  --sparkles-color: #8350e8;
 }
 
 html {
