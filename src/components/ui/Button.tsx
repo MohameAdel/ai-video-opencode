@@ -18,11 +18,11 @@ export function Button({
   whatsapp = false,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide uppercase transition-all duration-300";
+    "font-body inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide uppercase transition-all duration-300";
 
   const variants = {
     primary:
-      "bg-[#00FF80] text-[#0d0d0d] hover:bg-[#00e673] hover:scale-[1.03]",
+      "bg-[#03fb80] text-[#000000] hover:bg-[#03d96e] hover:scale-[1.03]",
     secondary:
       "border border-white/30 text-white hover:border-white/70 hover:scale-[1.03]",
   };

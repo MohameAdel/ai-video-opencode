@@ -1,7 +1,52 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
+
+const REVIEWS = [
+  { id: 1, src: "/New folder/hgd.jpeg", alt: "Client review showing results" },
+  { id: 2, src: "/New folder/ssss.jpeg", alt: "Client feedback on AI ad quality" },
+  { id: 3, src: "/New folder/WhatsApp Image 2026-04-11 at 4.08.56 PM.jpeg", alt: "Testimonial about fast turnaround" },
+  { id: 4, src: "/New folder/WhatsApp Image 2026-04-11 at 4.12.01 PM.jpeg", alt: "Review highlighting performance" },
+];
+
+function ReviewCarousel() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div className="mt-16">
+      <p className="font-body mb-6 text-center text-xs font-semibold tracking-[0.25em] text-white/40 uppercase">
+        Real client feedback
+      </p>
+      <div 
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
+        style={{ scrollBehavior: 'smooth' }}
+      >
+        {REVIEWS.map((review, i) => (
+          <motion.div
+            key={review.id}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="group relative flex-shrink-0 overflow-hidden rounded-xl border border-white/[0.06] bg-[#0a0a0a] transition-all duration-300 hover:border-[#03fb80]/10 hover:shadow-lg hover:shadow-[#03fb80]/5"
+          >
+            <div className="h-48 w-72 overflow-hidden">
+              <img
+                src={review.src}
+                alt={review.alt}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const TESTIMONIALS = [
   {
@@ -26,9 +71,9 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-[#0a1a0a] py-20 sm:py-32">
+    <section id="testimonials" className="relative overflow-hidden bg-[#000000] py-20 sm:py-32">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute bottom-0 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-[#00FF80]/[0.04] blur-[200px]" />
+        <div className="absolute bottom-0 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-[#03fb80]/[0.02] blur-[200px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-8">
@@ -40,12 +85,11 @@ export function Testimonials() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="mb-4 text-xs font-semibold tracking-[0.25em] text-[#00FF80]/60 uppercase">
-              Testimonials
+            <p className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase">
             </p>
-            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
               What our{" "}
-              <span className="text-[#00FF80]">clients say</span>
+              <span className="text-[#03fb80]">clients say</span>
             </h2>
           </motion.div>
 
@@ -58,10 +102,10 @@ export function Testimonials() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -5 }}
-                className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-left transition-all duration-300 hover:border-[#00FF80]/20 hover:bg-[#00FF80]/[0.03]"
+                className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-6 text-left transition-all duration-300 hover:border-[#03fb80]/10 hover:bg-[#0d0d0d]"
               >
                 {/* Quote icon */}
-                <div className="mb-4 text-[#00FF80]/30">
+                <div className="mb-4 text-[#03fb80]/50">
                   <svg
                     className="h-8 w-8"
                     fill="currentColor"
@@ -71,15 +115,17 @@ export function Testimonials() {
                   </svg>
                 </div>
 
-                <p className="mb-6 text-[#a0a0a0]">{testimonial.quote}</p>
+                <p className="font-body mb-6 text-white/60">{testimonial.quote}</p>
 
                 <div>
-                  <p className="font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-xs text-[#666666]">{testimonial.role}</p>
+                  <p className="font-body font-semibold text-white">{testimonial.name}</p>
+                  <p className="font-body text-xs text-white/40">{testimonial.role}</p>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          <ReviewCarousel />
         </div>
 
         {/* Final CTA */}
@@ -90,9 +136,9 @@ export function Testimonials() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mt-24 text-center"
         >
-          <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
+          <h2 className="font-heading text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
             Ready to turn your product into a{" "}
-            <span className="text-[#00FF80]">sales machine?</span>
+            <span className="text-[#03fb80]">sales machine?</span>
           </h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

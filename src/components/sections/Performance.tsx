@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 const STATS = [
   { value: 3.5, suffix: "x", label: "ROAS", description: "Return on ad spend" },
   { value: 40, suffix: "%", label: "CTR", description: "Click-through rate increase" },
-  { value: 72, suffix: "h", label: "Delivery", description: "Production turnaround" },
+  { value: 72, suffix: "h", label: "Delivery", description: "Production turnaround", isText: true }
 ];
 
 function AnimatedCounter({
@@ -53,7 +53,7 @@ function AnimatedCounter({
   }, [value, suffix]);
 
   return (
-    <span ref={counterRef} className="text-4xl font-bold text-[#00FF80] md:text-5xl">
+    <span ref={counterRef} className="font-heading text-4xl font-bold text-[#03fb80] md:text-5xl">
       0{suffix}
     </span>
   );
@@ -61,9 +61,9 @@ function AnimatedCounter({
 
 export function Performance() {
   return (
-    <section id="results" className="relative overflow-hidden bg-[#0a1a0a] py-20 sm:py-32">
+    <section id="results" className="relative overflow-hidden bg-[#000000] py-20 sm:py-32">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute bottom-0 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[#00FF80]/[0.03] blur-[150px]" />
+        <div className="absolute bottom-0 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[#03fb80]/[0.015] blur-[150px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 text-center sm:px-8">
@@ -73,12 +73,11 @@ export function Performance() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-4 text-xs font-semibold tracking-[0.25em] text-[#00FF80]/60 uppercase">
-            Results
+          <p className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase">
           </p>
-          <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
+          <h2 className="font-heading text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
             Performance,{" "}
-            <span className="text-[#00FF80]">not promises.</span>
+            <span className="text-[#03fb80]">not promises.</span>
           </h2>
         </motion.div>
 
@@ -90,19 +89,19 @@ export function Performance() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#00FF80]/20 hover:bg-[#00FF80]/[0.03]"
+              className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#03fb80]/10 hover:bg-[#0d0d0d]"
             >
               <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              <p className="mt-2 text-sm font-semibold tracking-wide text-white uppercase">
+              <p className="font-body mt-2 text-sm font-semibold tracking-wide text-white uppercase">
                 {stat.label}
               </p>
-              <p className="mt-1 text-xs text-[#666666]">{stat.description}</p>
+              <p className="font-body mt-1 text-xs text-white/60">{stat.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a1a0a] to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#000000] to-transparent" />
     </section>
   );
 }

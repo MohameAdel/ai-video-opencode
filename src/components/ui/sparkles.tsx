@@ -6,17 +6,18 @@ interface SparklesProps {
   className?: string
   density?: number
   color?: string
+  speed?: number
 }
 
-export function Sparkles({ className, density = 800, color = "#FFFFFF" }: SparklesProps) {
+export function Sparkles({ className, density = 800, color = "#FFFFFF", speed = 1 }: SparklesProps) {
   const [particles, setParticles] = useState<Array<{x: number, y: number, vx: number, vy: number, size: number, opacity: number}>>([])
 
   useEffect(() => {
     const newParticles = Array.from({ length: density }, () => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: Math.random() * 0.5 + 0.2,
+      vx: (Math.random() - 0.5) * 0.2 * speed,
+      vy: Math.random() * 0.5 + 0.2 * speed,
       size: Math.random() * 2 + 1,
       opacity: Math.random(),
     }))

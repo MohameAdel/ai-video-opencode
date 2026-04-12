@@ -121,3 +121,22 @@ export function CustomizableSolutionsIllustration() {
   );
 }
 
+i want make same desine but adedd this content 
+
+Headline: Our Ai experience
+sub Headline:
+Built on a performance system
+Steps:
+Market Research
+ We analyze your product, audience, and competitors.
+Script & Hooks
+ We build high-converting angles and hooks.
+AI Production
+ We create scroll-stopping visuals.
+Voice & Sound
+ We design audio that amplifies impact.
+Editing & Optimization
+ We refine every frame for performance.
+
+All optimized to drive results.
+ Not just content.

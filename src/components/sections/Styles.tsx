@@ -4,89 +4,174 @@ import { motion } from "motion/react";
 
 const STYLES = [
   {
-    title: "Talking Product Ads",
-    description: "Give your product a voice that sells.",
+    title: "Market Research",
+    description: "We analyze your product, audience, and competitors.",
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a10 10 0 1 0 10 10" /><path d="M12 8v4l3 3" />
+        <circle cx="18" cy="6" r="3" fill="currentColor" stroke="none" opacity="0.3" />
+        <circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none" />
       </svg>
     ),
   },
   {
-    title: "AI-Generated Characters",
-    description: "High-end digital humans for your brand.",
+    title: "Script & Hooks",
+    description: "We build high-converting angles and hooks.",
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+        <path d="M18 8c1.1 0 2 .9 2 2s-.9 2-2 2" />
       </svg>
     ),
   },
   {
-    title: "Animation & Storytelling",
-    description: "Turn features into compelling stories.",
+    title: "AI Production",
+    description: "We create scroll-stopping visuals.",
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0118 7.125v-1.5m1.125 2.625c-.621 0-1.125.504-1.125 1.125v1.5m2.625-2.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125M18 5.625v5.25M7.125 12h9.75m-9.75 0A1.125 1.125 0 016 10.875M7.125 12C6.504 12 6 12.504 6 13.125m0-2.25C6 11.496 5.496 12 4.875 12M18 10.875c0 .621-.504 1.125-1.125 1.125M18 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m-12 5.25v-5.25m0 5.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125m-12 0v-1.5c0-.621-.504-1.125-1.125-1.125M18 18.375v-5.25m0 5.25v-1.5c0-.621.504-1.125 1.125-1.125M18 13.125v1.5c0 .621.504 1.125 1.125 1.125M18 13.125c0-.621.504-1.125 1.125-1.125M6 13.125v1.5c0 .621-.504 1.125-1.125 1.125M6 13.125C6 12.504 5.496 12 4.875 12m-1.5 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M19.125 12h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h1.5m14.25 0h1.5" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3" />
       </svg>
     ),
   },
   {
-    title: "UGC-Style Creatives",
-    description: "Raw, authentic content that converts fast.",
+    title: "Voice & Sound",
+    description: "We design audio that amplifies impact.",
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="4" height="10" rx="1" />
+        <rect x="10" y="4" width="4" height="16" rx="1" />
+        <rect x="18" y="9" width="4" height="8" rx="1" />
+      </svg>
+    ),
+  },
+  {
+    title: "Editing & Optimization",
+    description: "We refine every frame for performance.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="4" height="10" rx="1" />
+        <rect x="10" y="4" width="4" height="16" rx="1" />
+        <rect x="18" y="9" width="4" height="8" rx="1" />
       </svg>
     ),
   },
 ];
 
+const fadeUp = (delay = 0) => ({
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, delay } },
+});
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.11, delayChildren: 0.35 } },
+};
+
 export function Styles() {
   return (
-    <section id="styles" className="relative overflow-hidden bg-[#0a1a0a] py-20 sm:py-32">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00FF80]/[0.02] blur-[150px]" />
-      </div>
+    <section id="styles" className="relative overflow-hidden min-h-screen">
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "#000000",
+        }}
+      />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 text-center sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p className="mb-4 text-xs font-semibold tracking-[0.25em] text-[#00FF80]/60 uppercase">
-            Our Styles
-          </p>
-          <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
-            Unlimited Styles.{" "}
-            <span className="text-[#00FF80]">One Goal: Conversions.</span>
-          </h2>
-        </motion.div>
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.03 }}>
+        <defs>
+          <pattern id="finegrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#03fb80" strokeWidth="0.4" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#finegrid)" />
+      </svg>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {STYLES.map((style, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-left transition-all duration-300 hover:border-[#00FF80]/20 hover:bg-[#00FF80]/[0.03]"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#00FF80]/10 text-[#00FF80] transition-colors duration-300 group-hover:bg-[#00FF80]/20">
-                {style.icon}
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-white">
-                {style.title}
-              </h3>
-              <p className="text-sm text-[#a0a0a0]">{style.description}</p>
+      <div className="absolute pointer-events-none"
+        style={{
+          top: "-10%", right: "-8%", width: "560px", height: "560px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(3,251,128,0.08) 0%, rgba(3,251,128,0.04) 40%, transparent 70%)"
+        }} />
+      <div className="absolute pointer-events-none"
+        style={{
+          bottom: "-12%", left: "-8%", width: "420px", height: "420px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(3,251,128,0.06) 0%, transparent 65%)"
+        }} />
+
+      <div className="relative z-10 flex items-center w-full max-w-6xl mx-auto px-8 md:px-16 py-14">
+        <div className="w-full flex items-center gap-10 lg:gap-16">
+          <div className="flex-1 flex flex-col">
+            <motion.div variants={fadeUp(0)} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="inline-flex items-center self-start mb-7">
+
             </motion.div>
-          ))}
+
+            <motion.h1 variants={fadeUp(0.08)} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="text-5xl md:text-6xl font-heading font-black text-white leading-[1.05] tracking-tight mb-4">
+              Our Ai<br />
+              <span style={{ color: "#03fb80" }}>
+                experience
+              </span>
+            </motion.h1>
+
+            <motion.p variants={fadeUp(0.16)} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="text-lg font-body font-medium text-white/60 mb-10 leading-snug">
+              {" "}
+              <span className="text-white/90 font-body font-semibold">Built on a performance system</span>
+            </motion.p>
+
+            <motion.ul variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="flex flex-col gap-3">
+              {STYLES.map((style, i) => (
+                <motion.li key={i} variants={fadeUp(0)}
+                  whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                  className="group flex items-center gap-4 px-5 py-4 rounded-2xl cursor-default"
+                  style={{
+                    background: "rgba(255,255,255,0.02)", border: "1px solid rgba(3,251,128,0.08)",
+                    backdropFilter: "blur(12px)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)"
+                  }}>
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                      style={{
+                        background: "rgba(3,251,128,0.1)", border: "1px solid rgba(3,251,128,0.15)", color: "#03fb80"
+                      }}>
+                    {style.icon}
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-white font-body font-semibold text-sm leading-tight mb-0.5">{style.title}</p>
+                    <p className="text-white/60 text-xs leading-relaxed font-body">{style.description}</p>
+                  </div>
+                  <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    style={{ color: "#03fb80" }}>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
+
+          <div className="hidden lg:block lg:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="relative aspect-[4/5] rounded-2xl overflow-hidden"
+            >
+              <img
+                src="/media/147741.jpg"
+                alt="AI Video Experience"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#03fb80]/20 via-transparent to-transparent" />
+            </motion.div>
+          </div>
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a1a0a] to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24"
+        style={{ background: "linear-gradient(to top, #000000 0%, transparent 100%)" }} />
     </section>
   );
 }

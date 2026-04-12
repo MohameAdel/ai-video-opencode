@@ -43,13 +43,13 @@ function FAQItem({
     <div className="border-b border-white/[0.06]">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-5 text-left transition-colors duration-300 hover:text-[#00FF80]"
+        className="flex w-full items-center justify-between py-5 text-left transition-colors duration-300 hover:text-[#03fb80]"
       >
-        <span className="text-lg font-medium text-white">{faq.question}</span>
+        <span className="font-heading text-lg font-medium text-white">{faq.question}</span>
         <motion.svg
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.3 }}
-          className="h-5 w-5 shrink-0 text-[#00FF80]"
+          className="h-5 w-5 shrink-0 text-[#03fb80]/60"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -71,7 +71,7 @@ function FAQItem({
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-[#a0a0a0]">{faq.answer}</p>
+            <p className="font-body pb-5 text-white/60">{faq.answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -83,7 +83,7 @@ export function FAQs() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative overflow-hidden bg-[#0a1a0a] py-20 sm:py-32">
+    <section id="faq" className="relative overflow-hidden bg-[#000000] py-20 sm:py-32">
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-8">
         <div className="text-center">
           <motion.div
@@ -92,12 +92,11 @@ export function FAQs() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="mb-4 text-xs font-semibold tracking-[0.25em] text-[#00FF80]/60 uppercase">
-              FAQs
+            <p className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase">
             </p>
-            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
               Got questions?{" "}
-              <span className="text-[#00FF80]">We got answers.</span>
+              <span className="text-[#03fb80]">We got answers.</span>
             </h2>
           </motion.div>
         </div>
@@ -127,7 +126,7 @@ export function FAQs() {
         </motion.div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a1a0a] to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#000000] to-transparent" />
     </section>
   );
 }

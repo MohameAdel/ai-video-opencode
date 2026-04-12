@@ -2,10 +2,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { SocialProof } from "@/components/sections/SocialProof";
-import { TheProblem } from "@/components/sections/TheProblem";
-import { WhyUs } from "@/components/sections/WhyUs";
 import { Styles } from "@/components/sections/Styles";
-import { TheSystem } from "@/components/sections/TheSystem";
+import { AIExperience } from "@/components/sections/AIExperience";
 import { Performance } from "@/components/sections/Performance";
 import { GrowthSolutions } from "@/components/sections/GrowthSolutions";
 import { UseCases } from "@/components/sections/UseCases";
@@ -19,14 +17,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SocialProof />
-      <TheProblem />
-      <WhyUs />
-      <Styles />
-      <TheSystem />
-      <Performance />
       <GrowthSolutions />
-      <UseCases />
       <PricingSection />
+      <AIExperience />
+      <Styles />
+      <Performance />
+      <UseCases />
       <FAQs />
       <Testimonials />
       <Footer />

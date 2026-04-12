@@ -25,6 +25,7 @@ interface TextProps {
   onStart?: () => void
   onComplete?: () => void
   autoStart?: boolean
+  transition?: object
 }
 
 export interface VerticalCutRevealRef {
@@ -52,6 +53,7 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
       onStart,
       onComplete,
       autoStart = true,
+      transition,
       ...props
     },
     ref
@@ -131,7 +133,7 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
       hidden: { y: reverse ? "-100%" : "100%" },
       visible: (i: number) => ({
         y: 0,
-        transition: {
+        transition: transition || {
           type: "spring",
           stiffness: 190,
           damping: 22,

@@ -1,20 +1,24 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Coolvetica+LT+Std+Bold:wght@400;500;700;900&family=Nexa:wght@300;400;500;600;700&display=swap');
 
 @theme {
-  --color-background: #0a1a0a;
-  --color-surface: #1a1a1a;
-  --color-surface-elevated: #262626;
-  --color-primary: #00FF80;
+  --color-background: #000000;
+  --color-surface: #000000;
+  --color-surface-elevated: #1a1a1a;
+  --color-primary: #03fb80;
   --color-text-primary: #ffffff;
-  --color-text-secondary: #a0a0a0;
-  --color-text-tertiary: #666666;
+  --color-text-secondary: #ffffff;
+  --color-text-tertiary: #ffffff;
   --color-sparkles-color: var(--sparkles-color);
   --color-gradient-color: var(--gradient-color);
+  
+  --font-heading: "Coolvetica LT Std Bold", sans-serif;
+  --font-body: "Nexa", sans-serif;
 }
 
 :root {
-  --gradient-color: #8350e8;
-  --sparkles-color: #8350e8;
+  --gradient-color: #03fb80;
+  --sparkles-color: #03fb80;
 }
 
 html {
@@ -36,8 +40,16 @@ html {
 }
 
 body {
-  background-color: #0a1a0a;
+  background-color: #000000;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
 }

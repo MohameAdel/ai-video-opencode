@@ -4,37 +4,42 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 const BRANDS = [
-  "NOON",
-  "NAMSHI",
-  "STYLI",
-  "SHEIN",
-  "OULA",
-  "BRANDX",
-  "LUXORA",
-  "VOGARA",
+  { name: "NOON", logo: "/brands/image1.jpeg" },
+  { name: "NAMSHI", logo: "/brands/image2.jpeg" },
+  { name: "STYLI", logo: "/brands/image3.jpeg" },
+  { name: "SHEIN", logo: "/brands/image4.jpeg" },
+  { name: "OULA", logo: "/brands/image5.jpeg" },
+  { name: "BRANDX", logo: "/brands/image6.jpeg" },
+  { name: "LUXORA", logo: "/brands/image7.jpeg" },
+  { name: "VOGARA", logo: "/brands/image8.jpeg" },
+
 ];
 
 const VIDEOS = [
-  { id: 1, title: "Talking Product Ad", style: "UGC", youtubeId: "_7_PYT9S7LI" },
-  { id: 2, title: "AI Character Ad", style: "Cinematic", youtubeId: "j4RujPM7E3o" },
-  { id: 3, title: "Animation Story", style: "Animated", youtubeId: "TgNtrgitQT4" },
-  { id: 4, title: "Product Showcase", style: "3D", youtubeId: "0DpU0N1V2to" },
+  { id: 1, title: "Animation Story", style: "UGC", youtubeId: "_7_PYT9S7LI" },
+  { id: 2, title: "AI Cinematic Ad", style: "Cinematic", youtubeId: "j4RujPM7E3o" },
+  { id: 3, title: "Product Showcase", style: "Animated", youtubeId: "TgNtrgitQT4" },
+  { id: 4, title: "Talking Product Ad", style: "3D", youtubeId: "0DpU0N1V2to" },
 ];
 
 function LogoMarquee() {
   return (
     <div className="relative mt-16 overflow-hidden">
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#0a1a0a] to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-[#0a1a0a] to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-[#000000] to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-[#000000] to-transparent" />
 
-      <div className="flex animate-marquee gap-16 py-6">
+      <div className="flex animate-marquee gap-6 py-10">
         {[...BRANDS, ...BRANDS].map((brand, i) => (
-          <span
+          <div
             key={i}
-            className="shrink-0 text-xl font-bold tracking-[0.2em] text-white/15 uppercase"
+            className="group flex h-20 w-24 shrink-0 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.03] shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-all duration-500 hover:scale-108 hover:border-[#03fb80]/30 hover:bg-white/[0.06] hover:shadow-[0_8px_32px_rgba(3,251,128,0.1)]"
           >
-            {brand}
-          </span>
+            <img
+              src={brand.logo}
+              alt={brand.name}
+              className="h-14 w-auto max-w-[80px] object-contain transition-all duration-500 group-hover:scale-105"
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -71,9 +76,9 @@ function VideoCard({
 
         {/* Play button */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-black/40 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-[#00FF80]/40 group-hover:bg-[#00FF80]/10">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-black/40 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-[#03fb80]/40 group-hover:bg-[#03fb80]/10">
             <svg
-              className="ml-0.5 h-5 w-5 text-white transition-colors duration-300 group-hover:text-[#00FF80]"
+              className="ml-0.5 h-5 w-5 text-white transition-colors duration-300 group-hover:text-[#03fb80]"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -88,10 +93,10 @@ function VideoCard({
         </div>
 
         {/* Glow on hover */}
-        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/[0.06] transition-all duration-300 group-hover:ring-[#00FF80]/20" />
+        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/[0.06] transition-all duration-300 group-hover:ring-[#03fb80]/20" />
       </div>
 
-      <p className="mt-3 text-sm font-medium text-white/60 transition-colors duration-300 group-hover:text-white/90">
+      <p className="font-body mt-3 text-sm font-medium text-white/60 transition-colors duration-300 group-hover:text-white/90">
         {video.title}
       </p>
     </motion.div>
@@ -125,7 +130,7 @@ function Lightbox({
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md"
       onClick={onClose}
     >
-        <motion.div
+      <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
@@ -223,10 +228,10 @@ export function SocialProof() {
   }, []);
 
   return (
-    <section id="work" className="relative overflow-hidden bg-[#0a1a0a] py-20 sm:py-32">
+    <section id="work" className="relative overflow-hidden bg-[#000000] py-20 sm:py-32">
       {/* Subtle glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute bottom-0 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[#00FF80]/[0.03] blur-[150px]" />
+        <div className="absolute bottom-0 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[#03fb80]/[0.015] blur-[150px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-8">
@@ -237,26 +242,25 @@ export function SocialProof() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-4 text-xs font-semibold tracking-[0.25em] text-[#00FF80]/60 uppercase"
+            className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase"
           >
-            Social Proof
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white"
+            className="font-heading text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white"
           >
             Ads Built to{" "}
-            <span className="text-[#00FF80]">Perform</span>
+            <span className="text-[#03fb80]">Perform</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-5 max-w-md text-lg text-[#a0a0a0]"
+            className="font-body mx-auto mt-5 max-w-md text-lg text-white/60"
           >
             Real creatives. Real results.
           </motion.p>
@@ -265,7 +269,7 @@ export function SocialProof() {
         {/* Video Carousel - Mobile */}
         <div className="mt-16 sm:hidden">
           <div className="relative">
-            <div 
+            <div
               className="overflow-hidden cursor-grab active:cursor-grabbing"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
@@ -288,16 +292,15 @@ export function SocialProof() {
                 ))}
               </motion.div>
             </div>
-            
+
             {/* Dots indicator */}
             <div className="mt-6 flex justify-center gap-2">
               {VIDEOS.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentSlide(i)}
-                  className={`h-2 rounded-full transition-all ${
-                    i === currentSlide ? "w-6 bg-[#00FF80]" : "w-2 bg-white/30"
-                  }`}
+                  className={`h-2 rounded-full transition-all ${i === currentSlide ? "w-6 bg-[#03fb80]" : "w-2 bg-white/30"
+                    }`}
                 />
               ))}
             </div>
@@ -328,11 +331,11 @@ export function SocialProof() {
           <div className="flex flex-col items-center gap-1 sm:flex-row sm:items-baseline sm:gap-2">
             <span
               ref={counterRef}
-              className="text-3xl font-bold text-[#00FF80]"
+              className="font-heading text-3xl font-bold text-[#03fb80]"
             >
               0+
             </span>
-            <span className="text-center text-sm text-[#a0a0a0]">
+            <span className="font-body text-center text-sm text-white/60">
               High-Performing Ads Delivered to GCC Brands
             </span>
           </div>
@@ -349,7 +352,7 @@ export function SocialProof() {
       )}
 
       {/* Bottom fade */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a1a0a] to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#000000] to-transparent" />
     </section>
   );
 }

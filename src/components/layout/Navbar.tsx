@@ -27,8 +27,8 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#0a1f0a]/95 backdrop-blur-xl border-b border-[#00FF80]/10 shadow-[0_4px_30px_rgba(0,255,128,0.03)]"
-          : "bg-[#0a1f0a]/80 backdrop-blur-md"
+          ? "bg-[#000000]/95 backdrop-blur-xl border-b border-[#03fb80]/10 shadow-[0_4px_30px_rgba(3,251,128,0.03)]"
+          : "bg-[#000000]/80 backdrop-blur-md"
       }`}
     >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-4 py-4 sm:px-8">
@@ -50,10 +50,10 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="relative text-[13px] font-semibold tracking-wide text-white/70 uppercase transition-colors duration-300 hover:text-white group"
+              className="font-body relative text-[13px] font-semibold tracking-wide text-white/70 uppercase transition-colors duration-300 hover:text-white group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#00FF80] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#03fb80] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -63,7 +63,7 @@ export function Navbar() {
           href="https://wa.me/966554085657?text=Hi! I'm interested in creating AI-powered video ads for my brand. Can you help?"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2.5 rounded-full bg-[#00FF80] px-6 py-2.5 text-[13px] font-bold tracking-wide text-[#0a1f0a] uppercase transition-all duration-300 hover:bg-[#00e673] hover:shadow-[0_0_30px_rgba(0,255,128,0.25)] hover:scale-[1.03] active:scale-[0.98]"
+          className="font-body hidden md:inline-flex items-center gap-2.5 rounded-full bg-[#03fb80] px-6 py-2.5 text-[13px] font-bold tracking-wide text-[#000000] uppercase transition-all duration-300 hover:bg-[#03fb80] hover:shadow-[0_0_30px_rgba(3,251,128,0.25)] hover:scale-[1.03] active:scale-[0.98]"
         >
           Get Started
         </a>
@@ -91,7 +91,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="py-3 text-sm font-semibold tracking-wide text-white/70 uppercase border-b border-white/5 transition-colors hover:text-white"
+              className="font-body py-3 text-sm font-semibold tracking-wide text-white/70 uppercase border-b border-white/5 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
@@ -101,7 +101,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-[#00FF80] px-6 py-3 text-sm font-bold tracking-wide text-[#0a1f0a] uppercase"
+            className="font-body mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-[#03fb80] px-6 py-3 text-sm font-bold tracking-wide text-[#000000] uppercase"
           >
             Get Started
           </a>
