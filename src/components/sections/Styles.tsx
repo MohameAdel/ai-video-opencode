@@ -50,9 +50,9 @@ const STYLES = [
     description: "We refine every frame for performance.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="7" width="4" height="10" rx="1" />
-        <rect x="10" y="4" width="4" height="16" rx="1" />
-        <rect x="18" y="9" width="4" height="8" rx="1" />
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+        <polyline points="14 2 14 8 20 8" />
+        <path d="M9 15l2 2 4-4" />
       </svg>
     ),
   },
@@ -98,24 +98,27 @@ export function Styles() {
           background: "radial-gradient(circle, rgba(3,251,128,0.06) 0%, transparent 65%)"
         }} />
 
-      <div className="relative z-10 flex items-center w-full max-w-6xl mx-auto px-8 md:px-16 py-14">
-        <div className="w-full flex items-center gap-10 lg:gap-16">
-          <div className="flex-1 flex flex-col">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-16 py-14 lg:py-20">
+        <div className="w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <div className="flex-1 w-full flex flex-col">
             <motion.div variants={fadeUp(0)} initial="hidden" whileInView="show" viewport={{ once: true }}
-              className="inline-flex items-center self-start mb-7">
+              className="inline-flex items-center self-start mb-6">
 
             </motion.div>
 
             <motion.h1 variants={fadeUp(0.08)} initial="hidden" whileInView="show" viewport={{ once: true }}
-              className="text-5xl md:text-6xl font-heading font-black text-white leading-[1.05] tracking-tight mb-4">
-              Our Ai<br />
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-[1.1] tracking-tight mb-6">
+              Our AI<br />
               <span style={{ color: "#03fb80" }}>
                 experience
               </span>
             </motion.h1>
 
+            <motion.div variants={fadeUp(0.12)} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="h-px w-20 bg-gradient-to-r from-[#03fb80] to-transparent mb-6" />
+
             <motion.p variants={fadeUp(0.16)} initial="hidden" whileInView="show" viewport={{ once: true }}
-              className="text-lg font-body font-medium text-white/60 mb-10 leading-snug">
+              className="text-base md:text-lg font-body font-medium text-white/60 mb-8 leading-snug">
               {" "}
               <span className="text-white/90 font-body font-semibold">Built on a performance system</span>
             </motion.p>
@@ -125,20 +128,20 @@ export function Styles() {
               {STYLES.map((style, i) => (
                 <motion.li key={i} variants={fadeUp(0)}
                   whileHover={{ x: 5, transition: { duration: 0.2 } }}
-                  className="group flex items-center gap-4 px-5 py-4 rounded-2xl cursor-default"
+                  className="group flex items-center gap-5 px-6 py-5 rounded-2xl cursor-default touch-manipulation"
                   style={{
                     background: "rgba(255,255,255,0.02)", border: "1px solid rgba(3,251,128,0.08)",
                     backdropFilter: "blur(12px)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)"
                   }}>
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                    <div className="flex-shrink-0 w-12 h-12 min-w-[48px] rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                       style={{
                         background: "rgba(3,251,128,0.1)", border: "1px solid rgba(3,251,128,0.15)", color: "#03fb80"
                       }}>
                     {style.icon}
                   </div>
-                  <div className="flex-1">
-                    <p className="text-white font-body font-semibold text-sm leading-tight mb-0.5">{style.title}</p>
-                    <p className="text-white/60 text-xs leading-relaxed font-body">{style.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white font-body font-semibold text-base leading-tight mb-1">{style.title}</p>
+                    <p className="text-white/60 text-sm leading-relaxed font-body truncate">{style.description}</p>
                   </div>
                   <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                     style={{ color: "#03fb80" }}>
@@ -151,20 +154,21 @@ export function Styles() {
             </motion.ul>
           </div>
 
-          <div className="hidden lg:block lg:w-1/2">
+          <div className="hidden lg:block lg:w-1/2 lg:flex-shrink-0 lg:h-[600px]">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/5] rounded-2xl overflow-hidden"
+              className="relative w-full h-full rounded-2xl overflow-hidden"
             >
               <img
                 src="/media/147741.jpg"
-                alt="AI Video Experience"
+                alt="Flux Experience"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#03fb80]/20 via-transparent to-transparent" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-[#03fb80]/10 rounded-2xl" />
             </motion.div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 const STATS = [
   { value: 3.5, suffix: "x", label: "ROAS", description: "Return on ad spend" },
   { value: 40, suffix: "%", label: "CTR", description: "Click-through rate increase" },
-  { value: 72, suffix: "h", label: "Delivery", description: "Production turnaround", isText: true }
+  { value: "24-72h", label: "Delivery", description: "Production turnaround" }
 ];
 
 function AnimatedCounter({
@@ -75,7 +75,7 @@ export function Performance() {
         >
           <p className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase">
           </p>
-          <h2 className="font-heading text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
+          <h2 className="font-heading text-[clamp(1.75rem,4.5vw,3.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
             Performance,{" "}
             <span className="text-[#03fb80]">not promises.</span>
           </h2>
@@ -91,7 +91,13 @@ export function Performance() {
               transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="group rounded-2xl border border-white/[0.06] bg-[#0a0a0a] p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#03fb80]/10 hover:bg-[#0d0d0d]"
             >
-              <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+              {typeof stat.value === "number" ? (
+                <AnimatedCounter value={stat.value} suffix={stat.suffix || ""} />
+              ) : (
+                <span className="font-heading text-4xl font-bold text-[#03fb80] md:text-5xl">
+                  {stat.value}
+                </span>
+              )}
               <p className="font-body mt-2 text-sm font-semibold tracking-wide text-white uppercase">
                 {stat.label}
               </p>

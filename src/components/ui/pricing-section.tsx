@@ -50,7 +50,7 @@ export default function PricingSection() {
 
       {/* Header */}
       <article className="text-center mb-16 pt-32 max-w-3xl mx-auto space-y-6 relative">
-        <h2 className="text-5xl font-bold text-white leading-tight">
+        <h2 className="text-5xl font-bold text-white leading-tight flex flex-wrap justify-center gap-x-3">
           <VerticalCutReveal
             splitBy="words"
             staggerDuration={0.15}
@@ -63,7 +63,22 @@ export default function PricingSection() {
               damping: 40,
             }}
           >
-            AI creates content. We create revenue.
+            AI creates content We create
+          </VerticalCutReveal>
+          <VerticalCutReveal
+            splitBy="words"
+            staggerDuration={0.15}
+            staggerFrom="first"
+            reverse={true}
+            containerClassName="justify-center"
+            transition={{
+              type: "spring",
+              stiffness: 250,
+              damping: 40,
+            }}
+            className="text-green-400"
+          >
+            revenue
           </VerticalCutReveal>
         </h2>
       </article>
@@ -85,11 +100,10 @@ export default function PricingSection() {
                 <div className="absolute -inset-4 rounded-2xl bg-green-500/10 blur-2xl" />
               )}
               <Card
-                className={`h-full transition-all duration-500 ${
-                  column.highlight
+                className={`h-full transition-all duration-500 ${column.highlight
                     ? "bg-gradient-to-b from-neutral-900 via-neutral-800 to-neutral-900 shadow-[0_0_60px_-15px_rgba(34,197,94,0.3)] z-20 ring-1 ring-green-500/40 border-green-500/20"
                     : "bg-gradient-to-b from-neutral-800/50 via-neutral-900/50 to-neutral-800/50 z-10 border-neutral-700/50"
-                }`}
+                  }`}
               >
                 <CardHeader className={`text-left pb-6 ${column.highlight ? "pt-8 px-8" : "pt-8 px-8"}`}>
                   <h3 className={`text-3xl font-bold ${column.highlight ? 'text-green-400' : 'text-neutral-500'}`}>

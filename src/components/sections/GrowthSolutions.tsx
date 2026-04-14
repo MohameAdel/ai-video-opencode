@@ -237,11 +237,47 @@ const CARDS = [
 
 ];
 
+function ImageIcon({ width = 140, height = 110, className = "" }: IconProps) {
+  return (
+    <img
+      src="/media/icon1.png"
+      alt="Weeks of waiting"
+      width={width}
+      height={height}
+      className={className}
+    />
+  );
+}
+
+function BurnedBudgetsIcon({ width = 140, height = 110, className = "" }: IconProps) {
+  return (
+    <img
+      src="/media/icon6.png"
+      alt="Burned budgets"
+      width={width}
+      height={height}
+      className={className}
+    />
+  );
+}
+
+function UnpredictableResultsIcon({ width = 140, height = 110, className = "" }: IconProps) {
+  return (
+    <img
+      src="/media/icon7.png"
+      alt="Unpredictable results"
+      width={width}
+      height={height}
+      className={className}
+    />
+  );
+}
+
 const ICONS = {
-  expert: ExpertGuidanceIllustration,
-  setup: FastSetupIllustration,
+  expert: ImageIcon,
+  setup: BurnedBudgetsIcon,
   analytics: AdvancedAnalyticsIllustration,
-  integration: SeamlessIntegrationIllustration,
+  integration: UnpredictableResultsIcon,
   customizable: CustomizableSolutionsIllustration,
   scale: ScalableInfrastructureIllustration,
 };
@@ -299,7 +335,7 @@ export function GrowthSolutions({
   showCTA = true
 }: GrowthSolutionsProps) {
   return (
-    <section className="relative overflow-hidden bg-[#000000] py-20 sm:py-32">
+    <section className="relative overflow-hidden bg-[#000000] py-16 sm:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#000000_70%)]" />
 
       <div className="pointer-events-none absolute inset-0 opacity-20">
@@ -316,7 +352,7 @@ export function GrowthSolutions({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-[-0.02em]"
+            className="font-heading text-[clamp(1.75rem,4vw,3.5rem)] font-bold leading-[1.15] tracking-[-0.02em]"
           >
             <span className="text-[#03fb80]">
               Traditional

@@ -42,34 +42,25 @@ export function Hero() {
       </div>
 
       {/* Text content */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 pt-24 pb-8 text-center sm:px-8 sm:pt-32 sm:pb-12">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 pt-36 pb-12 text-center sm:px-8 sm:pt-44 sm:pb-16">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto max-w-4xl text-[clamp(2.5rem,6vw,5rem)] font-heading font-bold leading-[1.05] tracking-[-0.03em] text-white"
+          className="mx-auto max-w-4xl text-[clamp(2rem,5vw,4rem)] font-heading font-bold leading-[1.2] tracking-[-0.01em] text-white"
         >
           Transform Your Product into
-          <br />
+          <br className="my-0.5" />
           <span className="text-[#03fb80]">High-Performance Ads</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-white/60 font-body"
-        >
-          No studios. No models. Just sales.
-          <br />
-          Test fast. Scale faster.
-        </motion.p>
+        
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex items-center justify-center"
+          className="mt-12 flex items-center justify-center"
         >
           <Button href="#start" variant="primary" whatsapp>
             Start Your First Ad

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Video",
-  description: "AI Video application",
+  title: "Flux",
+  description: "Flux application",
 };
 
 export default function RootLayout({

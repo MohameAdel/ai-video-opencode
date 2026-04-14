@@ -32,14 +32,14 @@ export function Navbar() {
       }`}
     >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-4 py-4 sm:px-8">
-        {/* Logo */}
+{/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <Image
             src="/logo.png"
-            alt="AIVideo"
+            alt="Flux"
             width={180}
             height={60}
-            className="h-14 w-auto sm:h-16"
+            className="h-14 w-auto sm:h-[60px]"
             priority
           />
         </Link>
