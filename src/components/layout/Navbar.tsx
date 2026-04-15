@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Styles", href: "#styles" },
-  { label: "Process", href: "#process" },
+  { label: "Our Work", href: "#work" },
+  { label: "The Challenge", href: "#growth" },
+  { label: "We VS Them", href: "#pricing" },
+  { label: "Solutions", href: "#ai-experience" },
+  { label: "Our Approach", href: "#styles" },
   { label: "Results", href: "#results" },
   { label: "FAQ", href: "#faq" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
 export function Navbar() {
@@ -25,14 +27,13 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-[#000000]/95 backdrop-blur-xl border-b border-[#03fb80]/10 shadow-[0_4px_30px_rgba(3,251,128,0.03)]"
-          : "bg-[#000000]/80 backdrop-blur-md"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+        ? "bg-[#000000]/95 backdrop-blur-xl border-b border-[#03fb80]/10 shadow-[0_4px_30px_rgba(3,251,128,0.03)]"
+        : "bg-[#000000]/80 backdrop-blur-md"
+        }`}
     >
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-4 py-4 sm:px-8">
-{/* Logo */}
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-4 py-4 sm:px-8">
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <Image
             src="/logo.png"
@@ -81,9 +82,8 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ${
-          mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="flex flex-col gap-1 px-4 pb-6 sm:px-8">
           {navLinks.map((link) => (

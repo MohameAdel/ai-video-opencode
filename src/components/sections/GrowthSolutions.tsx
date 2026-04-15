@@ -335,7 +335,7 @@ export function GrowthSolutions({
   showCTA = true
 }: GrowthSolutionsProps) {
   return (
-    <section className="relative overflow-hidden bg-[#000000] py-16 sm:py-32">
+    <section id="growth" className="relative overflow-hidden bg-[#000000] py-16 sm:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#000000_70%)]" />
 
       <div className="pointer-events-none absolute inset-0 opacity-20">
@@ -354,10 +354,9 @@ export function GrowthSolutions({
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-heading text-[clamp(1.75rem,4vw,3.5rem)] font-bold leading-[1.15] tracking-[-0.02em]"
           >
-            <span className="text-[#03fb80]">
-              Traditional
+            <span className="text-[#03fb80] text-[clamp(2rem,5vw,4.5rem)]">
+              Traditional production
             </span>
-            <span className="ml-3 text-white">production is broken</span>
           </motion.h2>
 
           <motion.p
@@ -365,9 +364,9 @@ export function GrowthSolutions({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body mx-auto mt-5 max-w-lg text-lg text-white/50"
+            className="font-heading text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-white mt-6"
           >
-            {subtitle}
+            is broken. Here's why we're the fix.
           </motion.p>
         </div>
 

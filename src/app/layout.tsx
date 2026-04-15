@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Flux",
   description: "Flux application",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/media/logo-head.png",
+    apple: "/media/logo-head.png",
   },
 };
 

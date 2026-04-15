@@ -95,7 +95,8 @@ export function FAQs() {
             <p className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase">
             </p>
             <h2 className="font-heading text-[clamp(1.5rem,4vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
-              Got questions?{" "}
+              questions?{" "}
+              <br></br>
               <span className="text-[#03fb80]">We got answers.</span>
             </h2>
           </motion.div>

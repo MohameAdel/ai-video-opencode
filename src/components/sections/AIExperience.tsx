@@ -166,6 +166,7 @@ export function AIExperience() {
             className="text-5xl md:text-7xl font-heading font-bold text-white leading-tight mb-10"
           >
             Unlimited Styles.{" "}
+            <br></br>
             <span style={{ color: "#03fb80" }}>
               One Goal: Conversions.
             </span>

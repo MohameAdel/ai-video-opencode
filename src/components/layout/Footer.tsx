@@ -3,11 +3,13 @@ import Image from "next/image";
 
 const FOOTER_LINKS = [
   { label: "Work", href: "#work" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Styles", href: "#styles" },
-  { label: "Process", href: "#process" },
+  { label: "The Challenge", href: "#growth" },
+  { label: "We VS Them", href: "#pricing" },
+  { label: "Solutions", href: "#ai-experience" },
+  { label: "Our Approach", href: "#styles" },
   { label: "Results", href: "#results" },
   { label: "FAQ", href: "#faq" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
 export function Footer() {

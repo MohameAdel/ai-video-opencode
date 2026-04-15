@@ -1,52 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
-
-const REVIEWS = [
-  { id: 1, src: "/New folder/hgd.jpeg", alt: "Client review showing results" },
-  { id: 2, src: "/New folder/ssss.jpeg", alt: "Client feedback on AI ad quality" },
-  { id: 3, src: "/New folder/WhatsApp Image 2026-04-11 at 4.08.56 PM.jpeg", alt: "Testimonial about fast turnaround" },
-  { id: 4, src: "/New folder/WhatsApp Image 2026-04-11 at 4.12.01 PM.jpeg", alt: "Review highlighting performance" },
-];
-
-function ReviewCarousel() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <div className="mt-16">
-      <p className="font-body mb-6 text-center text-xs font-semibold tracking-[0.25em] text-white/40 uppercase">
-        Real client feedback
-      </p>
-      <div 
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
-        style={{ scrollBehavior: 'smooth' }}
-      >
-        {REVIEWS.map((review, i) => (
-          <motion.div
-            key={review.id}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group relative flex-shrink-0 overflow-hidden rounded-xl border border-white/[0.06] bg-[#0a0a0a] transition-all duration-300 hover:border-[#03fb80]/10 hover:shadow-lg hover:shadow-[#03fb80]/5"
-          >
-            <div className="h-48 w-72 overflow-hidden">
-              <img
-                src={review.src}
-                alt={review.alt}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 const TESTIMONIALS = [
   {
@@ -125,33 +80,31 @@ export function Testimonials() {
             ))}
           </div>
 
-          <ReviewCarousel />
-        </div>
-
-        {/* Final CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-24 text-center"
-        >
-          <h2 className="font-heading text-[clamp(1.5rem,4vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
-            Ready to turn your product into a{" "}
-            <span className="text-[#03fb80]">sales machine?</span>
-          </h2>
+          {/* Final CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-10"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-24 text-center"
           >
-            <Button href="#start" variant="primary" whatsapp>
-              Start Your First Ad
-            </Button>
+            <h2 className="font-heading text-[clamp(1.5rem,4vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
+              Ready to turn your product into a{" "}
+              <span className="text-[#03fb80]">sales machine?</span>
+            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-10"
+            >
+              <Button href="#start" variant="primary" whatsapp>
+                Start Your First Ad
+              </Button>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

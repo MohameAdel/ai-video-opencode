@@ -20,6 +20,10 @@ const VIDEOS = [
   { id: 2, title: "AI Cinematic Ad", style: "Cinematic", youtubeId: "j4RujPM7E3o" },
   { id: 3, title: "Product Showcase", style: "Animated", youtubeId: "TgNtrgitQT4" },
   { id: 4, title: "Talking Product Ad", style: "3D", youtubeId: "0DpU0N1V2to" },
+  { id: 5, title: "AI Short Ad", style: "AI Short", youtubeId: "f9DufyiC2UA" },
+  { id: 6, title: "Product Reveal", style: "Reveal", youtubeId: "vhpQ1SZ1_Ys" },
+  { id: 7, title: "Viral Short", style: "Viral", youtubeId: "UY3vFH5UMT0" },
+  { id: 8, title: "Trendy Ad", style: "Trendy", youtubeId: "o4mbDm45Xyw" },
 ];
 
 function LogoMarquee() {
@@ -165,6 +169,9 @@ export function SocialProof() {
   const [activeVideo, setActiveVideo] = useState<(typeof VIDEOS)[0] | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [autoSlide, setAutoSlide] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
   const counterRef = useRef<HTMLSpanElement>(null);
   const countedRef = useRef(false);
@@ -172,27 +179,67 @@ export function SocialProof() {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % VIDEOS.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + VIDEOS.length) % VIDEOS.length);
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     if (isPaused) return;
-    const interval = setInterval(nextSlide, 4000);
+    const interval = setInterval(() => {
+      setAutoSlide((prev) => (prev + 1) % 2);
+    }, 4000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      if (autoSlide === 1) {
+        scrollContainerRef.current.scrollBy({ left: 600, behavior: "smooth" });
+        setAutoSlide(0);
+      }
+    }
+  }, [autoSlide]);
+
+  const handleDragStart = (clientX: number) => {
+    touchStartX.current = clientX;
     setIsPaused(true);
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
+  const handleDragEnd = (clientX: number) => {
     if (touchStartX.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
+    const diff = touchStartX.current - clientX;
     if (Math.abs(diff) > 50) {
       if (diff > 0) nextSlide();
       else prevSlide();
     }
     touchStartX.current = null;
     setTimeout(() => setIsPaused(false), 5000);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    handleDragStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    handleDragEnd(e.changedTouches[0].clientX);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    handleDragStart(e.clientX);
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    handleDragEnd(e.clientX);
   };
 
   useEffect(() => {
@@ -268,9 +315,9 @@ export function SocialProof() {
 
         {/* Video Carousel - Mobile */}
         <div className="mt-16 sm:hidden">
-          <div className="relative">
+          <div className="relative" ref={containerRef}>
             <div
-              className="overflow-hidden cursor-grab active:cursor-grabbing"
+              className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
@@ -307,16 +354,40 @@ export function SocialProof() {
           </div>
         </div>
 
-        {/* Video Grid - Tablet & Desktop */}
-        <div className="mx-auto mt-16 hidden max-w-5xl grid-cols-1 gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-4">
-          {VIDEOS.map((video, i) => (
-            <VideoCard
-              key={video.id}
-              video={video}
-              index={i}
-              onClick={() => setActiveVideo(video)}
-            />
-          ))}
+        {/* Video Grid - Tablet & Desktop - horizontal scroll row with navigation */}
+        <div className="mt-16 hidden sm:block relative">
+          <button
+            onClick={scrollLeft}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition-colors hover:text-white hover:border-[#03fb80]/30 hover:bg-black/80"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <div
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-6 pb-4 -mx-4 px-12 scrollbar-hide"
+          >
+            {VIDEOS.map((video, i) => (
+              <div key={video.id} className="flex-shrink-0 w-[260px] sm:w-[280px]">
+                <VideoCard
+                  video={video}
+                  index={i}
+                  onClick={() => setActiveVideo(video)}
+                />
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={scrollRight}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition-colors hover:text-white hover:border-[#03fb80]/30 hover:bg-black/80"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
         {/* Counter */}
