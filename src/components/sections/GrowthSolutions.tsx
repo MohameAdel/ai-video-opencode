@@ -354,8 +354,11 @@ export function GrowthSolutions({
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-heading text-[clamp(1.75rem,4vw,3.5rem)] font-bold leading-[1.15] tracking-[-0.02em]"
           >
-            <span className="text-[#03fb80] text-[clamp(2rem,5vw,4.5rem)]">
-              Traditional production
+            <span className="text-white text-[clamp(2rem,5vw,4.5rem)]">
+            Traditional production is
+            </span> 
+             <span className="text-green-400 text-[clamp(2rem,5vw,4.5rem)]">
+             {" "}broken
             </span>
           </motion.h2>
 
@@ -366,7 +369,7 @@ export function GrowthSolutions({
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-heading text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-white mt-6"
           >
-            is broken. Here's why we're the fix.
+            
           </motion.p>
         </div>
 

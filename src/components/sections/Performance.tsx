@@ -75,7 +75,7 @@ export function Performance() {
         >
           <p className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase">
           </p>
-          <h2 className="font-heading text-[clamp(1.75rem,4.5vw,3.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
+          <h2 className="font-heading text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
             Performance,{" "}
             <span className="text-[#03fb80]">not promises.</span>
           </h2>

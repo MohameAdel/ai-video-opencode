@@ -50,7 +50,7 @@ export default function PricingSection() {
 
       {/* Header */}
       <article className="text-center mb-16 pt-32 max-w-3xl mx-auto space-y-6 relative">
-        <h2 className="text-5xl font-bold text-white leading-tight flex flex-wrap justify-center gap-x-3">
+        <h2 className="text-[clamp(1.75rem,4vw,2.25rem)] font-bold text-white leading-tight flex flex-wrap justify-center gap-x-3">
           <VerticalCutReveal
             splitBy="words"
             staggerDuration={0.15}
@@ -63,7 +63,7 @@ export default function PricingSection() {
               damping: 40,
             }}
           >
-            AI creates content We create
+            AI creates content 
           </VerticalCutReveal>
           <VerticalCutReveal
             splitBy="words"
@@ -78,7 +78,7 @@ export default function PricingSection() {
             }}
             className="text-green-400"
           >
-            revenue
+           We create revenue
           </VerticalCutReveal>
         </h2>
       </article>

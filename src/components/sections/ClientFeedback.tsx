@@ -18,10 +18,10 @@ export function ClientFeedback() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-8">
         <div className="mt-6 text-center">
-          <p className="font-heading text-[clamp(1.25rem,2.5vw,2rem)] font-semibold text-white">
+          <p className="font-heading text-[clamp(2rem,3vw,2.25rem)] font-semibold text-white">
            Our Results
           </p>
-          <div className="mt-8 flex justify-center gap-6 overflow-x-auto pb-4 scrollbar-hide">
+          <div className="mt-8 -mx-4 px-4 flex justify-start gap-6 overflow-x-auto pb-4 scrollbar-hide sm:mx-0 sm:px-0">
             {REVIEWS.map((review, i) => (
               <motion.div
                 key={review.id}

@@ -42,7 +42,7 @@ export function Testimonials() {
           >
             <p className="font-body mb-4 text-xs font-semibold tracking-[0.25em] text-[#03fb80]/60 uppercase">
             </p>
-            <h2 className="font-heading text-[clamp(1.5rem,4vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-[clamp(2.25rem,4.5vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
               What our{" "}
               <span className="text-[#03fb80]">clients say</span>
             </h2>
@@ -88,7 +88,7 @@ export function Testimonials() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mt-24 text-center"
           >
-            <h2 className="font-heading text-[clamp(1.5rem,4vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-[clamp(1.5rem,4.5vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
               Ready to turn your product into a{" "}
               <span className="text-[#03fb80]">sales machine?</span>
             </h2>
