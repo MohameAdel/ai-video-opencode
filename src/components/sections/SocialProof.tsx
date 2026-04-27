@@ -12,18 +12,18 @@ const BRANDS = [
   { name: "BRANDX", logo: "/brands/image6.jpeg" },
   { name: "LUXORA", logo: "/brands/image7.jpeg" },
   { name: "VOGARA", logo: "/brands/image8.jpeg" },
-
 ];
 
 const VIDEOS = [
-  { id: 1, title: "Animation Story", style: "UGC", youtubeId: "_7_PYT9S7LI" },
-  { id: 2, title: "AI Cinematic Ad", style: "Cinematic", youtubeId: "j4RujPM7E3o" },
-  { id: 3, title: "Product Showcase", style: "Animated", youtubeId: "TgNtrgitQT4" },
-  { id: 4, title: "Talking Product Ad", style: "3D", youtubeId: "0DpU0N1V2to" },
-  { id: 5, title: "AI Short Ad", style: "AI Short", youtubeId: "f9DufyiC2UA" },
-  { id: 6, title: "Product Reveal", style: "Reveal", youtubeId: "vhpQ1SZ1_Ys" },
-  { id: 7, title: "Viral Short", style: "Viral", youtubeId: "UY3vFH5UMT0" },
-  { id: 8, title: "Trendy Ad", style: "Trendy", youtubeId: "o4mbDm45Xyw" },
+  { id: 1, title: "Animation Story", style: "Animated", youtubeId: "leclcnjnbBY" },
+  { id: 2, title: "Animation Story", style: "UGC", youtubeId: "_7_PYT9S7LI" },
+  { id: 3, title: "AI Cinematic Ad", style: "Cinematic", youtubeId: "j4RujPM7E3o" },
+  { id: 4, title: "Product Showcase", style: "Animated", youtubeId: "TgNtrgitQT4" },
+  { id: 5, title: "Talking Product Ad", style: "3D", youtubeId: "0DpU0N1V2to" },
+  { id: 6, title: "AI Short Ad", style: "AI Short", youtubeId: "f9DufyiC2UA" },
+  { id: 7, title: "Product Reveal", style: "Reveal", youtubeId: "vhpQ1SZ1_Ys" },
+  { id: 8, title: "Viral Short", style: "Viral", youtubeId: "UY3vFH5UMT0" },
+  { id: 9, title: "Trendy Ad", style: "Trendy", youtubeId: "o4mbDm45Xyw" },
 ];
 
 function LogoMarquee() {
